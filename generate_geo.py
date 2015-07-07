@@ -6,10 +6,10 @@ import sys
 
 def crime_to_feature(crime):
     return {
-        "type": "feature",
+        "type": "Feature",
         "geometry": {
             "type": "Point",
-            "coordinates": [crime["Latitude"], crime["Longitude"]]
+            "coordinates": [float(crime["Longitude"]), float(crime["Latitude"]) ]
         },
         "properties": {
             "outcome": crime["Last outcome category"]
