@@ -1,0 +1,21 @@
+{
+  "name": "cycle_crime_map",
+  "version": "0.0.0",
+  "authors": [
+    "Stephen Paulger <stephen.paulger@arm.com>"
+  ],
+  "description": "Map of bicycle thefts from police.uk data",
+  "main": "app/map.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/assets",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "leaflet": "~0.7.3"
+  }
+}
