@@ -9,7 +9,10 @@ def crime_to_feature(crime):
         "type": "Feature",
         "geometry": {
             "type": "Point",
-            "coordinates": [float(crime["Longitude"]), float(crime["Latitude"]) ]
+            "coordinates": [
+                float(crime["Longitude"]),
+                float(crime["Latitude"])
+            ]
         },
         "properties": {
             "outcome": crime["Last outcome category"]
@@ -35,10 +38,24 @@ def convert(inputs, output, crime_type):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Create GeoJSON form police.uk crime data")
-    parser.add_argument("inputs", metavar="csvfile", type=str, nargs="+", help="CSV files to convert")
-    parser.add_argument("--output", dest="output", type=argparse.FileType('w'), default=sys.stdout)
-    parser.add_argument("--crime-type", dest="crime_type", type=str, nargs="?")
+    parser = argparse.ArgumentParser(
+        description="Create GeoJSON from police.uk crime data")
+    parser.add_argument(
+        "inputs",
+        metavar="csvfile",
+        type=str,
+        nargs="+",
+        help="CSV files to convert")
+    parser.add_argument(
+        "--output",
+        dest="output",
+        type=argparse.FileType('w'),
+        default=sys.stdout)
+    parser.add_argument(
+        "--crime-type",
+        dest="crime_type",
+        type=str,
+        nargs="?")
 
     args = parser.parse_args()
 
